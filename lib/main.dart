@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_shopping/screens/loginPageScreen.dart';
+import 'package:online_shopping/screens/signUpPageScreen.dart';
 
 void main() {
 
@@ -7,6 +8,7 @@ void main() {
     initialRoute: '/',
     routes: {
       '/': (context) => loginPage(),
+      '/signUp':(context) =>signUp(),
     },
   ));
 }
