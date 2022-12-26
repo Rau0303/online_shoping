@@ -17,8 +17,10 @@ class _signUpState extends State<signUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          margin: const EdgeInsets.fromLTRB(20, 70, 20, 20),
           child: Column(
             children: [
               RichText(text: const TextSpan(
@@ -107,7 +109,41 @@ class _signUpState extends State<signUp> {
                     return "Поля не совпадают!";
                   }
                 },
+              ),
+              betSize,
+              TextButton(
+                onPressed: (){},
+                style: TextButton.styleFrom(
+                    minimumSize: const Size(180,50),
+                    primary: Colors.white,
+                    backgroundColor: Colors.blueAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+
+                    )
+
+                ),
+                child: const Text('Зарегистрироваться',style: buttonText),
+
+              ),
+              betSize,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(text: const TextSpan(
+                      text: "Есть аккаунт?",
+                      style: subTitle
+                  )),
+                  TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, "/");
+                      },
+                      child: const Text("Войдите!"))
+                ],
               )
+
+
+
             ],
           ),
         ),
